@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+let Schema = mongoose.Schema
 
 let ReviewSchema = new Schema({
     rating: { type: Number, required: true },
@@ -8,4 +8,4 @@ let ReviewSchema = new Schema({
     timestamp: {type:Date, 'default':Date.now}
 })
 
-module.exports = mongoose.model('review', ReviewSchema)
+module.exports = mongoose.model('review', ReviewSchema);

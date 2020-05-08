@@ -6,7 +6,7 @@ let moment = require('moment');
 let morgan = require('morgan');
 let favicon = require('serve-favicon');
 let bodyParser = require('body-parser');
-let methodOverride = require('method-override')
+let methodOverride = require('method-override');
 
 module.exports = function (app) {
     app.use(favicon(path.join(__dirname, '../public', 'images', 'favicon.png')));

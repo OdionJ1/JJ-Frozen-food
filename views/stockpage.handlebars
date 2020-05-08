@@ -1,0 +1,37 @@
+<section style="margin-top: 150px;">
+    {{!-- <h4>Call <span><a class="e-btn e-link" href="tel:07032292277">07032292277</a></span> to get current prices</h4> --}}  
+<div class="row">
+  <div class="left">
+    <h2>CATEGORY</h2>
+    <ul id="myCategories">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">PHP</a></li>
+    </ul>
+    <div style="padding-left: 10px; margin-top: 3px;" class="add-category">
+          <p><a href="" class="btn-create" id="add_Category">Add category</a></p>
+          
+          <section id="category_form_area">
+              <form action="/createcategory" method="post" class="form-horizontal" role="form" id="categoryForm">
+                <div class="form-group">
+                    <input name="categoryname" type="text" class="form-control" id="categoryname" placeholder="Enter Category" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Add</button>
+                </div>
+              </form>
+          </section>
+      </div>
+  </div>
+  
+  <div class="right" style="background-color:#fff;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div>
+</div>
+
+</section>

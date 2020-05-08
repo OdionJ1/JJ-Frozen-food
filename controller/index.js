@@ -1,3 +1,5 @@
+let jsdom = require("jsdom");
+let { JSDOM } = jsdom;
 let ReviewModel = require('../models/review');
 
 module.exports = {
@@ -15,8 +17,11 @@ module.exports = {
             if (result) {
                 viewModel.review = result;
                 viewModel.review.forEach(element => {
-                    // console.log(element.rating);
-
+                    if(element.rating === 2){
+                        viewModel.rate2 = 2
+                    }
+                    console.log(typeof element.rating);
+                    console.log(viewModel.rate2)
                 });
 
                 res.render('index', viewModel);
@@ -32,20 +37,12 @@ module.exports = {
 
         let newReviewModel = new ReviewModel({ rating, testimonial, name });
         
-        // if(parseInt(newReviewModel.rating) === 3){
-        //     console.log(newReviewModel.rating);
-        //     document.getElementById('star33').checked = true;
-        //     document.getElementById('star11').disabled = true;
-        //     document.getElementById('star22').disabled = true;
-        //     document.getElementById('star44').disabled = true;
-        //     document.getElementById('star55').disabled = true;
-        // }
 
         newReviewModel.save(function (err, review) {
             if (err) throw err;
 
-            console.log(review)
-            console.log(review.rating)
+            console.log(review);
+            console.log(review.rating);
             res.redirect(`/#${review._id}`);
 
         });

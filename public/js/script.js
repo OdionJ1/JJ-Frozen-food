@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     $('.btn-createModal').click(function(event){
 		event.preventDefault();
 
@@ -10,8 +9,8 @@ $(document).ready(function(){
 	let day = new Date().getDay();
 	let time = new Date().getHours();
 
-	if(day === 0 && time >= 8 && time < 4){
-		document.querySelector("p.opening-time").textContent = "Open today until 2pm"
+	if(day === 0 && time >= 8 && time < 16){
+		document.querySelector("p.opening-time").textContent = "Open today until 4pm"
 	} else if (day !== 0 && time >= 8 && time < 22){
 		document.querySelector("p.opening-time").textContent = "Open today until 10pm"
 	} else {document.querySelector("p.opening-time").textContent = "Closed"}
@@ -22,5 +21,13 @@ $(document).ready(function(){
 		$('#reviewModal').modal('show');
 	});
 
+	$('#category_form_area').hide();
 
+	$('#add_Category').click(function(){
+		$('#category_form_area').slideToggle(650);
+	})
+
+	$('.btn-create').click(function(event){
+		event.preventDefault()
+	})
 });

@@ -13,7 +13,6 @@ textarea {
 }
 
 /*Header Section*/
-
 .navbar-default {
     background-color: #fff!important;
 }
@@ -111,9 +110,9 @@ h4 span i{
     margin-bottom: 70px;
   }
 
-  #updates, #testimonials, #contact, #gallery{
-    margin-left: 170px;
-    margin-right: 170px;
+  #updates1, #testimonials1, #contact1, #gallery1, #products1{
+    margin-left: 150px;
+    margin-right: 150px;
   }
 
 
@@ -204,41 +203,19 @@ h4 span i{
     display: flex;
   }
 
-  /* rate1 */
-  .rate1 {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
+  .stars-outer {
+    color: #ccc;
+    position: relative;
+    display: inline-block;
   }
-  .rate1:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-  }
-  .rate1:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-  }
-  .rate1:not(:checked) > label:before {
-    content: '★ ';
-  }
-  .rate1 > input:checked ~ label {
-    color: #ffc700;    
-  }
-  .rate1:not(:checked) > label:hover,
-  .rate1:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-  }
-  .rate1 > input:checked + label:hover,
-  .rate1 > input:checked + label:hover ~ label,
-  .rate1 > input:checked ~ label:hover,
-  .rate1 > input:checked ~ label:hover ~ label,
-  .rate1 > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+  
+  .stars-inner {
+    color: #f8ce0b;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
   }
 
   /*Review Modal*/
@@ -312,11 +289,68 @@ h4 span i{
   display: flex;
   justify-content: space-around;
 }
+
+.images-row2, .images-row3{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.images-row2{
+  margin-bottom: 45px;
+}
 /*Gallery Section end*/
+
+/* Our Product Section */
+.products-cat{
+  display: flex;
+  justify-content: space-around;
+}
+
+.overlay-image {
+  position: relative;
+  width: 325px;
+ }
+ .overlay-image .image {
+  display: block;
+ }
+ 
+ .overlay-image .text {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.5em;
+  text-shadow: 2px 2px 2px #000;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .overlay-image .text:hover{
+   text-decoration: underline;
+ }
+
+.overlay-image .hover {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.5);
+  width: 325px;
+ }
+ 
+ .overlay-image:hover .hover {
+  opacity: 1;
+ }
+/* Our Product Section end */
 
 /*Contact us section*/
 .google-map-link{
   margin-top: 40px;
+  margin-left: 6px;
 }
 
 .address{

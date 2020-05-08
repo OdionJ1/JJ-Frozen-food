@@ -1,0 +1,93 @@
+/* Global Section */
+.index_area{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+textarea {
+    resize: vertical;
+  }
+/* Global Section end */
+
+/* Header Section */
+.navbar-header-text {
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+.navbar-header-text:hover {
+    text-decoration: none;
+    color: gray;
+}
+/* Header Section end */
+
+/* Categories and product section */
+.row {
+    display: flex;
+    margin-top: -30px;
+}
+
+/* Category Section */
+* {
+    box-sizing: border-box;
+  }
+  
+.left {
+    flex: 18%;
+    padding: 0 0 15px;
+    background-color: #ddd;
+    border: 1px solid #4b7dda;
+}
+  
+.left h2 {
+    background-color: #4b7dda;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 0;
+}
+
+.left .add-category p a{
+    color: #4b7dda;
+}
+
+.left .add-category p a:hover{
+    text-decoration: underline;
+    background-color: #ddd;
+}
+
+#myCategories {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+#myCategories li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block
+}
+  
+#myCategories li a:hover {
+    background-color: #eee;
+}
+
+#category_form_area{
+    padding: 10px;
+    width: 95%;
+}
+
+/* Category Section end */
+
+
+/* Product Section */
+.right {
+    flex: 65%;
+    padding: 0 10px 15px;
+}
+
+/* Product Section end*/
+
+  /* Categories and product section end */
