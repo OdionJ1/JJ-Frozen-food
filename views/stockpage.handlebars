@@ -4,10 +4,11 @@
   <div class="left">
     <h2>CATEGORY</h2>
     <ul id="myCategories">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li><a href="#">PHP</a></li>
+      {{#if category}}
+      {{#each category}}
+      <li><a href="#">{{categoryname}}</a></li>
+      {{/each}}
+      {{/if}}
     </ul>
     <div style="padding-left: 10px; margin-top: 3px;" class="add-category">
           <p><a href="" class="btn-create" id="add_Category">Add category</a></p>
@@ -18,7 +19,7 @@
                     <input name="categoryname" type="text" class="form-control" id="categoryname" placeholder="Enter Category" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit">Add</button>
+                    <button class = "add-button" type="submit">Add</button>
                 </div>
               </form>
           </section>

@@ -15,11 +15,7 @@ module.exports = {
             if (result) {
                 viewModel.review = result;
                 viewModel.review.forEach(element => {
-                    if(element.rating === 2){
-                        viewModel.rate2 = 2
-                    }
-                    console.log(typeof element.rating);
-                    console.log(viewModel.rate2)
+        
                 });
 
                 res.render('index', viewModel);
