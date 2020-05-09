@@ -23,11 +23,13 @@ $(document).ready(function(){
 
 	$('#category_form_area').hide();
 
-	$('#add_Category').click(function(){
-		$('#category_form_area').slideToggle(650);
-	})
+	// $('#add_Category').click(function(){
+	// 	$('#category_form_area').slideToggle(650);
+	// })
 
 	$('.btn-create').click(function(event){
 		event.preventDefault()
 	})
+
+	document.getElementById('happy').style.color = 'blue';
 });

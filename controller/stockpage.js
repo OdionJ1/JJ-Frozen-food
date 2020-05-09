@@ -5,7 +5,7 @@ module.exports = {
     index: function(req, res){
         let viewModel = {
             layout: 'stockpagemain'
-        }
+        };
         res.render('stockpage', viewModel)
     }
 }

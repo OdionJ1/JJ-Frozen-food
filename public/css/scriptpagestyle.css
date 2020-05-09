@@ -24,7 +24,6 @@ textarea {
 /* Categories and product section */
 .row {
     display: flex;
-    margin-top: -30px;
 }
 
 /* Category Section */

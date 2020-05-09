@@ -1,5 +1,3 @@
-let jsdom = require("jsdom");
-let { JSDOM } = jsdom;
 let ReviewModel = require('../models/review');
 
 module.exports = {
