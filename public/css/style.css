@@ -7,6 +7,16 @@ textarea {
   resize: vertical;
 }
 
+footer{
+  background-color: #dfdede!important;
+  color: #2c2c2c;
+  padding: 2px 0;
+}
+
+footer p a:hover{
+  text-decoration: none;
+}
+
 .jj{
   /* font-family: sans-serif; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -29,7 +39,7 @@ textarea {
 }
 
 ul li a {
-  color: rgb(47, 102, 204)!important;
+  color: #2f66cc!important;
 }
 
 ul li a:hover {

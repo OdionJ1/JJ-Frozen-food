@@ -6,10 +6,22 @@
 
 textarea {
     resize: vertical;
-  }
+}
+
+.section-line{
+    border: 0;
+    clear:both;
+    display:block;              
+    background-color:#dacfcf;
+    height: 1px;
+}
 /* Global Section end */
 
 /* Header Section */
+.navbar-default {
+    background-color: #fff!important;
+}
+
 .navbar-header-text {
     font-weight: bolder;
     margin-left: 30px;
@@ -17,7 +29,23 @@ textarea {
 
 .navbar-header-text:hover {
     text-decoration: none;
-    color: gray;
+    color: rgb(170, 168, 168);
+}
+
+.navbar-right input{
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.navbar-right button{
+    padding: 6px 10px;
+    margin-top: 8px;
+    background: rgb(241, 240, 240);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 /* Header Section end */
 
@@ -90,14 +118,117 @@ textarea {
     border: 1px solid #4b7dda;
 }
 
+#category_form_area p #add_stock{
+    margin-left: -9px;
+}
+
+#category_form_area #stock_form_area{
+    margin-left: -20px;
+}
+
+#file, #name, #description{
+    margin-left: 9px;
+    margin-bottom: 4px;
+}
+
+#file, #name, #description, #min, #max{
+    background-color: #4b7dda;
+    color: #eee;
+}
+
+#stock_form_area .add-stock-button{
+    border: 1px solid #4b7dda;
+    margin-left: 16px;
+    margin-top: 10px;
+
+
+}
 /* Category Section end */
 
 
 /* Product Section */
 .right {
-    flex: 65%;
+    flex: 70%;
     padding: 0 10px 15px;
+    margin-top: -20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.right .contact{
+    margin-left: 450px;
+    margin-top: -20px;
+}
+
+.section-line2{
+    border: 0;
+    clear:both;
+    display:block;              
+    background-color:#dacfcf;
+    height: 1px;
+    margin-top: -3px;
+}
+
+.right #stock{
+    list-style-type: none;
+    margin-left: -30px;
+}
+
+.right #stock li{
+    display: flex;
+}
+
+.right #stock li .about-product{
+    margin-left: 30px;
+    margin-top: -18px;
+}
+
+.right #stock li .about-product .description, .right #stock li .about-product .availability{
+    margin-top: 40px;
+}
+
+.availability .inStock{
+    font-size: large;
+    font-weight: bold;
+    color: #64a81a;
+}
+
+#stock .price{
+    margin-left: 90px;
+}
+
+#stock .price .min, #stock .price .max{
+    font-size: x-large;
+    color: #fa3535;
+}
+
+
+/*Quote modal*/
+.modal {
+    margin-top: 50px;
+  }
+
+  .modal-header{
+    padding-top: 3px;
+  }
+
+  .input {
+    height: 30px;
+    margin-bottom: 2px;
+    margin-top: 4px;
+    border: none; 
+    border-bottom: #888690 solid 1px;
+    background: none
+  }
+
+  .submit-button{
+    color: #fff;
+    background-color: rgb(70, 115, 199);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 1px;
+    font-size: 16px;
+  }
+  /*Quote modal style end*/
 
 /* Product Section end*/
 

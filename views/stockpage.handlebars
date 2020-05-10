@@ -1,5 +1,6 @@
-<section style="margin-top: 120px;">
-    {{!-- <h4>Call <span><a class="e-btn e-link" href="tel:07032292277">07032292277</a></span> to get current prices</h4> --}} 
+<section style="margin-top: 100px;">
+    {{!-- <h4>Call <span><a class="e-btn e-link" href="tel:07032292277">07032292277</a></span> to get current prices</h4> --}}
+<hr class="section-line">
 <div class="row">
   <div class="left">
     <h2>CATEGORY</h2>
@@ -22,17 +23,135 @@
                     <button class = "add-button" type="submit">Add</button>
                 </div>
               </form>
+              <p><a href="" class="btn-create" id="add_stock">Add Stock</a></p>
+
+              <section id="stock_form_area">
+                <form action="/poststock">
+                <div class="form-group">
+                    <input type="file" name="file" class="form-control" id="file" required>
+                </div>
+
+                <div class="form-group">
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Product name" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="description" class="form-control" id="description" placeholder="Description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-6">
+                    <h5>min-price: </h5>
+                    <input name="min" type="text" class="form-control input-sm" id="min" placeholder="min" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <h5>max-price: </h5>
+                    <input name="max" type="text" class="form-control input-sm" id="max" placeholder="max" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                    <button class = "add-stock-button" type="submit">Add</button>
+                </div>
+                </form>
+
+              </section>
           </section>
       </div>
   </div>
   
   <div class="right" style="background-color:#fff;">
-    <h2>Page Content</h2>
-    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some text..</p>
+    <div>
+      <h3>Chicken</h3>
+    </div>
+    <h5 class="contact"><span><a href="/#contact3"></i> Contact us</a></span> to get current price or <span><a href="" class="btn-createModal">Get Quote</a></span></h5>
+    <hr class="section-line2">
+    <ul id="stock">
+      <li>
+        <img style="align-self: flex-start;" src="../public/images/Normal Chicken.jpg" alt="" width="130px">
+        <div class="about-product">
+          <h3 class="productname">Normal Chicken</h3>
+          <p class="description">Normal Chicken</p>
+          <p class="availability">Availability: <span class="inStock">In Stock</span></p>
+        </div>
+        <div class="price">
+          <p class= "wp">Wholesale price: <span class="min">&#8358;11,500 - </span><span class="max">&#8358;13,500</span></p>
+           <p class= "rp">Retail price: <span class="min">&#8358;1,200 - </span><span class="max">&#8358;1,400</span></p>
+        </div>
+      </li>
+      <hr class="section-line2">
+    </ul>
+
+    
   </div>
 </div>
+</section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+  {{!-- Get quote Modal --}}
+  <div class="modal" style="font-family: Georgia, 'Times New Roman', Times, serif;" id="quoteModal" tabindex="-1"
+    role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        ​
+        <div class="modal-header text-left navbar-default">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel2">Get Quote</h4>
+        </div>
+        ​
+        <div class="modal-body">
+          <form method="post" action="/quote" class="form-horizontal" role="form" id="quoteForm">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input name="name" type="input" class="form-control input" placeholder="Name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input name="phone" type="input" class="form-control input" placeholder="Phone number">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input name="email" type="input" class="form-control input" placeholder="Email" required>
+                <p class="text-left" style="font-size:11px;margin-top:5px;">&#42;Valid email address required</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-7">
+                <p class="text-left" style="font-size:12px;">How can we help you?</p>
+                <textarea name="request" class="input" cols="78" type="input"
+                  placeholder="I was wondering about availability and rates. I need help with the following:"></textarea>
+              </div>
+            </div>
+            <div class="form-group text-right">
+              <div class="col-sm-12">
+                <button type="submit" class="submit-button">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        ​
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
 </section>

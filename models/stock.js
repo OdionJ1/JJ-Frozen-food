@@ -16,4 +16,8 @@ let StockSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('stock', StockSchema)
+StockSchema.virtual('uniqueId').get(function(){
+    return this.filename.replace(path.extname(this.filename), '')
+});
+
+module.exports = mongoose.model('stock', StockSchema);
