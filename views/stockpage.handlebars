@@ -6,7 +6,7 @@
     <ul id="myCategories">
       {{#if category}}
       {{#each category}}
-      <li><a href="#">{{categoryname}}</a></li>
+      <li><a href=":{{categoryname}}">{{categoryname}}</a></li>
       {{/each}}
       {{/if}}
     </ul>
@@ -25,7 +25,7 @@
               <p><a href="" class="btn-create" id="add_stock">Add Stock</a></p>
 
               <section id="stock_form_area">
-                <form action="/poststock">
+                <form action="/poststock" enctype="multipart/form-data" method="post" class="form-horizontal" role="form" id="stockForm">
                 <div class="form-group">
                     <input type="file" name="file" class="form-control" id="file" required>
                 </div>
@@ -38,14 +38,23 @@
                     <textarea name="description" class="form-control" id="description" placeholder="Description" required></textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="margin-top: -10px;">
+                  <h5 class="text-center" style="font-weight: bold;">wholesale price </h5>
                   <div class="col-sm-6">
-                    <h5>min-price: </h5>
-                    <input name="min" type="text" class="form-control input-sm" id="min" placeholder="min" required>
+                    <input name="wpminprice" type="text" class="form-control input-sm" id="wpminprice" placeholder="min" required>
                   </div>
                   <div class="col-sm-6">
-                    <h5>max-price: </h5>
-                    <input name="max" type="text" class="form-control input-sm" id="max" placeholder="max" required>
+                    <input name="wpmaxprice" type="text" class="form-control input-sm" id="wpmaxprice" placeholder="max" required>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: -8px;">
+                  <h5 class="text-center" style="font-weight: bold;">Retail Price</h5>
+                  <div class="col-sm-6">
+                    <input name="rpminprice" type="text" class="form-control input-sm" id="rpminprice" placeholder="min" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <input name="rpmaxprice" type="text" class="form-control input-sm" id="rpmaxprice" placeholder="max" required>
                   </div>
                 </div>
 
@@ -61,27 +70,29 @@
   
   <div class="right" style="background-color:#fff;">
     <div>
-      <h3>Chicken</h3>
+      <h3 class="catname"></h3>
     </div>
     <h5 class="contact"><span><a href="/#contact3"></i> Contact us</a></span> to get current price or <span><a href="" class="btn-createModal">Get Quote</a></span></h5>
     <hr class="section-line2">
     <ul id="stock">
+      {{#if stock}}
+      {{#each stock}}
       <li>
-        <img style="align-self: flex-start;" src="../public/images/Normal Chicken.jpg" alt="" width="130px">
+        <img style="align-self: flex-start;" src="../public/upload/{{filename}}" alt="{{name}}" title="{{name}}" width="130px">
         <div class="about-product">
-          <h3 class="productname">Normal Chicken</h3>
-          <p class="description">Normal Chicken</p>
+          <h3 class="productname">{{name}}</h3>
+          <p class="description">{{description}}</p>
           <p class="availability">Availability: <span class="inStock">In Stock</span></p>
         </div>
         <div class="price">
-          <p class= "wp">Wholesale price: <span class="min">&#8358;11,500 - </span><span class="max">&#8358;13,500</span></p>
-           <p class= "rp">Retail price: <span class="min">&#8358;1,200 - </span><span class="max">&#8358;1,400</span></p>
+          <p class= "wp">Wholesale price: <span class="min">&#8358;{{wpminprice}} - </span><span class="max">&#8358;{{wpmaxprice}}</span></p>
+           <p class= "rp">Retail price: <span class="min">&#8358;{{rpminprice}} - </span><span class="max">&#8358;{{rpmaxprice}}</span></p>
         </div>
       </li>
       <hr class="section-line2">
+      {{/each}}
+      {{/if}}
     </ul>
-
-    
   </div>
 </div>
 </section>

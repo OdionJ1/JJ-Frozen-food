@@ -7,12 +7,12 @@ let ObjectId = Schema.ObjectId;
 let StockSchema = new Schema({
     category_id: {type:ObjectId},
     name: { type: String, required: true},
-    filename: {type:String},
+    filename: {type:String}, 
     description: { type: String },
-    price: {
-        min: {type: Number, min: 0},
-        max: {type: Number, min: 0}
-    }
+    wpminprice: {type: String, min: 0},
+    wpmaxprice: {type: String, min: 0},
+    rpminprice: {type: String, min: 0},
+    rpmaxprice: {type: String, min: 0},
 
 })
 
