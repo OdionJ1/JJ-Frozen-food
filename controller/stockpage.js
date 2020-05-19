@@ -20,12 +20,12 @@ module.exports = {
 
         }).lean();
 
-        StockModel.find({'category_id': req.params.category_id}, function(err, result){
+        StockModel.find({'category_id': req.params.Categoryname._id}, function(err, result){
             if (err) throw err;
-            console.log('params = ',req.params.category_id)
+            console.log('params = ',req.params.Categoryname)
 
             viewModel.stock = result;
-            viewModel.category_id = req.params.category_id
+            viewModel.categoryname = req.params.Categoryname
 
             res.render('stockpage', viewModel)
         }).lean();
@@ -69,7 +69,7 @@ module.exports = {
                                 throw err;
                             }
 
-                    StockCategoriesModel.findOne({'_id':req.params._id}, function(err, category){
+                    StockCategoriesModel.findOne({'categoryname':req.params.category}, function(err, category){
                         console.log('params = ', req.params.category);
                         
     

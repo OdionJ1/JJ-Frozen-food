@@ -6,7 +6,7 @@
     <ul id="myCategories">
       {{#if category}}
       {{#each category}}
-      <li><a href="{{_id}}">{{categoryname}}</a></li>
+      <li><a href="{{categoryname}}">{{categoryname}}</a></li>
       {{/each}}
       {{/if}}
     </ul>
@@ -27,7 +27,7 @@
 
 
               <section id="stock_form_area">
-                <form action="/poststock/{{category_id}}" enctype="multipart/form-data" method="post" class="form-horizontal" role="form" id="stockForm">
+                <form action="/poststock/{{categoryname}}" enctype="multipart/form-data" method="post" class="form-horizontal" role="form" id="stockForm">
                 <div class="form-group">
                     <input type="file" name="file" class="form-control" id="file" required>
                 </div>

@@ -5,7 +5,7 @@ let ObjectId = Schema.ObjectId;
 
 
 let StockSchema = new Schema({
-    category_id: {type:ObjectId},
+    category_id: {type:String},
     name: { type: String, required: true},
     filename: {type:String}, 
     description: { type: String },
