@@ -15,13 +15,17 @@ module.exports = {
             if (err) throw err;
             console.log(result);
             viewModel.category = result;
+            
+            
 
         }).lean();
 
-        StockModel.find({}, function(err, result){
+        StockModel.find({'category_id': req.params.category_id}, function(err, result){
             if (err) throw err;
+            console.log('params = ',req.params.category_id)
 
             viewModel.stock = result;
+            viewModel.category_id = req.params.category_id
 
             res.render('stockpage', viewModel)
         }).lean();
@@ -64,28 +68,35 @@ module.exports = {
                             if(err) {
                                 throw err;
                             }
+
+                    StockCategoriesModel.findOne({'_id':req.params._id}, function(err, category){
+                        console.log('params = ', req.params.category);
+                        
     
                     let newStock = new StockModel({
                         name:req.body.name,
                         filename: imgUrl + ext,
                         description:req.body.description, 
-                        wpmin: req.body.wpminprice,
-                        wpmax: req.body.wpmaxprice,
-                        rpmin: req.body.rpminprice,
-                        rpmax: req.body.rpmaxprice,
-                        category_id:req.category._id
+                        wpminprice: req.body.wpminprice,
+                        wpmaxprice: req.body.wpmaxprice,
+                        rpminprice: req.body.rpminprice,
+                        rpmaxprice: req.body.rpmaxprice,
+                        category_id: category._id
                     });
     
                     newStock.save(function(){
                         if(err){
                             throw err
                         }
+
+                        // newStock.find({}).populate('category_id').exec(function(err, category){
+                        //     console.log(JSON.stringify(category, null, "/t"))
+                        // })
     
-                        res.redirect('/stockpage')
+                        res.redirect('/')
                     });
-    
-                    
-                    });   
+                    })
+                    });
                     } else {
                         fs.unlink(tempPath, function(err) {
                             if(err){
@@ -96,7 +107,7 @@ module.exports = {
                     });
                     }
                 }
-
+            
             })
         }
         saveImage();

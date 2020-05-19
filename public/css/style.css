@@ -54,6 +54,10 @@ h4 span i{
   color: rgb(47, 102, 204)!important;
 }
 
+.sidenavlist2{
+  display: none;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -87,12 +91,7 @@ h4 span i{
     font-size: 36px;
     margin-left: 50px;
   }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-  /*Header Section*/
+  /*Header Section end*/
 
 
   /*Main Section*/
@@ -116,8 +115,7 @@ h4 span i{
   }
 
   .frozen-fish{
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin: 50px 0 70px 140px;
   }
 
   #updates1, #testimonials1, #contact1, #gallery1, #products1{
@@ -312,17 +310,10 @@ h4 span i{
 /*Gallery Section end*/
 
 /* Our Product Section */
-.products-cat{
-  display: flex;
-  justify-content: space-around;
-}
-
 .overlay-image {
   position: relative;
+  float: left;
   width: 325px;
- }
- .overlay-image .image {
-  display: block;
  }
  
  .overlay-image .text {
@@ -390,7 +381,139 @@ h4 span i{
   border-radius: 2px;
   font-size: 18px;
 }
+/* Contact us Section end */
 
+/* media Queries Section */
+@media screen and (max-width: 1200px){
+  .frozen-fish{
+    margin-left: 0px;
+  }
+
+  .address{
+    margin-left: 60px;
+    margin-right: 30px;
+  }
+
+  .new-section-line{
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+
+  .images img{
+    width: 250px;
+    margin: 8px;
+  }
+
+  .overlay-image .hover{
+    width: 305px;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+}
+
+@media screen and (max-width: 700px){
+  .overlay-image{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  h1{
+    font-size: 30px;
+    padding-top: 50px;
+  }
+
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+  #sidenaviconopen, #sidenaviconclose{
+    margin-left: 10px!important;
+    width: 5%!important;
+  }
+
+  .navbar-right{
+    display: none;
+  }
+
+  .navbar-header .forJJ{
+    margin-top: -28px!important;
+    margin-left: 30px!important;
+  }
+
+  .sidenavlist1{
+    display: none;
+  }
+
+  .sidenavlist2{
+    display: block;
+  }
+
+  .sidenavlist2 a i{
+    margin-right: 5px;
+  }
+
+  .sidenav{
+    margin-top: 0;
+  }
+
+  .overlay-image .hover{
+    width: 240px;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .overlay-image{
+    margin-left: 35px;
+  }
+
+  .new-section-line{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .images{
+    margin-top: 30px;
+  }
+
+  .images img{
+    margin-top: 10px;
+  }
+
+  .images-row1{
+    flex-direction: column;
+  }
+
+  .images-row2{
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  #updates1, #testimonials1, #contact1, #gallery1, #products1{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  textarea{
+    width: 100%;
+  }
+
+  footer{
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 985px){
+  .address{
+    margin: 0;
+  }
+
+  .contactUs{
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Media Queries Section end */
 
 
 

@@ -12,8 +12,7 @@ let StockSchema = new Schema({
     wpminprice: {type: String, min: 0},
     wpmaxprice: {type: String, min: 0},
     rpminprice: {type: String, min: 0},
-    rpmaxprice: {type: String, min: 0},
-
+    rpmaxprice: {type: String, min: 0}
 })
 
 StockSchema.virtual('uniqueId').get(function(){
