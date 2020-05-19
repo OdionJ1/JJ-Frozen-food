@@ -20,7 +20,7 @@ module.exports = {
 
         }).lean();
 
-        StockModel.find({'category_id': req.params.Categoryname._id}, function(err, result){
+        StockModel.find({'category_id': req.params.Categoryname}, function(err, result){
             if (err) throw err;
             console.log('params = ',req.params.Categoryname)
 
@@ -81,17 +81,13 @@ module.exports = {
                         wpmaxprice: req.body.wpmaxprice,
                         rpminprice: req.body.rpminprice,
                         rpmaxprice: req.body.rpmaxprice,
-                        category_id: category._id
+                        category_id: req.params.category
                     });
     
                     newStock.save(function(){
                         if(err){
                             throw err
                         }
-
-                        // newStock.find({}).populate('category_id').exec(function(err, category){
-                        //     console.log(JSON.stringify(category, null, "/t"))
-                        // })
     
                         res.redirect('/')
                     });
