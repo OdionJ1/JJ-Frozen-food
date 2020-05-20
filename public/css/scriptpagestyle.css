@@ -48,6 +48,35 @@ textarea {
     cursor: pointer;
 }
 /* Header Section end */
+/* Breadcrumb section */
+
+ul.breadcrumb {
+    list-style: none;
+    margin-left: -20px;
+    margin-bottom: -20px;
+    background-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 16px;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: '>' ;
+  }
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+/* Breadcrumb section end */
+
 
 /* Categories and product section */
 .row {
@@ -90,8 +119,8 @@ textarea {
     padding: 0;
     margin: 0;
 }
-  
-#myCategories li a {
+
+#myCategories li{
     padding: 12px;
     text-decoration: none;
     display: block;
@@ -100,9 +129,15 @@ textarea {
     font-weight: bold;
 }
   
-#myCategories li a:hover {
+#myCategories li:hover {
     background-color: #eee;
     text-decoration: underline;
+}
+
+#myCategories li .deleteIcon{
+    float: right;
+    width: 7%;
+    display: none;
 }
 
 #category_form_area{
@@ -187,6 +222,13 @@ textarea {
     color: #64a81a;
 }
 
+.price .deleteIcon2{
+  float: right;
+  margin-top: 30px;
+  font-size: 17px;
+  background-color: #f55252;
+}
+
 #stock .price{
     margin-left: 90px;
 }
@@ -224,6 +266,93 @@ textarea {
     font-size: 16px;
   }
   /*Quote modal style end*/
+
+  /* Delete Stock modal */
+  .modal-confirm {		
+    color: #636363;
+    width: 400px;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;   
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
+.modal-confirm .modal-body {
+    color: #999;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;		
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+    color: #999;
+}		
+.modal-confirm .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    min-width: 120px;
+    border: none;
+    min-height: 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+    outline: none !important;
+}
+.modal-confirm .btn-info {
+    background: #c1c1c1;
+}
+.modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+    background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+    background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+    background: #ee3535;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+
+/* delete Stock modal end */
 
 /* Product Section end*/
 
