@@ -1,3 +1,4 @@
+let async = require('async')
 let path = require('path');
 let fs = require('fs');
 let StockModel = require('../models/stock');
@@ -89,7 +90,7 @@ module.exports = {
                             throw err
                         }
     
-                        res.redirect('/')
+                        res.redirect(`/stockpage/${req.params.category}`)
                     });
                     })
                     });
@@ -107,6 +108,66 @@ module.exports = {
             })
         }
         saveImage();
+    },
+
+    removeStock: function(req, res){
+        StockModel.findOne({'_id':req.params.stock_id}, function(err, stock){
+            if(err) throw err;
+
+            if(stock){
+                fs.unlink(path.resolve('./public/upload/' + stock.filename), function(err){
+                    if(err) throw err;
+
+                    stock.remove(function(err){
+                        if(err){
+                            res.json(err);
+                        }else{
+                            res.json(true)
+                        }
+                    });
+                });
+            } else {
+                res.redirect('/');
+            }
+        })
+    },
+
+    removeCategory: function(req, res){
+        StockCategoriesModel.findOne({'categoryname':req.params.categoryname}, function(err, category){
+            console.log(req.params.categoryname)
+            if(err) throw err;
+
+            if(category){
+                StockModel.find({'category_id':req.params.categoryname}, function(err, stock){
+                    if(err) throw err;
+
+                    let deleteStock = function(stock, next){
+                        fs.unlink(path.resolve('./public/upload/' + stock.filename), function(err){
+                            if(err) throw err;
+        
+                            stock.remove(function(err){
+                                if(err) throw err;
+                            });
+                            next(err)
+                        });
+                    }
+                    async.each(stock, deleteStock, function(err){
+                        if(err) throw err;
+                        
+                        console.log('Done deleteing all stocks will the category_id '+req.params.categoryname)
+                    })
+                })
+                category.remove(function(err){
+                    if(err){
+                        res.json(err);
+                    }else{
+                        res.json(true)
+                    }
+                });
+            } else {
+                res.redirect('/')
+            }
+        })
     }
 
 

@@ -11,7 +11,7 @@
     <ul id="myCategories">
       {{#if category}}
       {{#each category}}
-      <li><a href="{{categoryname}}">{{categoryname}}</a><span class="deleteIcon"><a class="btn-delete-category" href=""><i class="fa fa-trash"></i></a></span></li>
+      <li><a href="{{categoryname}}">{{categoryname}}</a><span data-id="{{categoryname}}" class="deleteIcon btn-delete-category"><a href=""><i class="fa fa-trash"></i></a></span></li>
       {{/each}}
       {{/if}}
     </ul>
@@ -94,7 +94,7 @@
         <div class="price">
           <p class= "wp">Wholesale price: <span class="min">&#8358;{{wpminprice}} - </span><span class="max">&#8358;{{wpmaxprice}}</span></p>
            <p class= "rp">Retail price: <span class="min">&#8358;{{rpminprice}} - </span><span class="max">&#8358;{{rpmaxprice}}</span></p>
-           <button class=" btn-delete-stock deleteIcon2"><a href="/"><i class="fa fa-trash" style="color: #ffffff;"></i></a></button>
+           <button data-id="{{_id}}" class="btn-danger btn-delete-stock deleteIcon2"><a href="/"><i class="fa fa-trash" style="color: #ffffff;"></i></a></button>
         </div>
       </li>
       <hr class="section-line2">
@@ -128,7 +128,7 @@
           <h4> >{{categoryname}}< </h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-modal-yes">Yes</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-categorymodal-yes">Yes</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
         </div>
       </div><!-- /.modal-content -->
@@ -152,7 +152,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" data-dismiss="modal" id="btn-stockmodal-yes"  class="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>

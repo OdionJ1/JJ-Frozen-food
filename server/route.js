@@ -12,6 +12,9 @@ module.exports = function (app) {
     router.post('/createcategory' , stockpage.createCategory);
     router.post('/poststock/:category', stockpage.postStock);
 
+    router.delete('/category/:categoryname', stockpage.removeCategory);
+    router.delete('/stock/:stock_id', stockpage.removeStock);
+
     app.use(router);
 
 }
