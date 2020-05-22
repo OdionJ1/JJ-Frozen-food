@@ -93,21 +93,25 @@ $(document).ready(function(){
 	if(document.URL.indexOf('http://localhost:9090/stockpage/Chicken') >= 0){
 		document.querySelector('.catname').textContent = "Chicken"
 		document.getElementsByClassName('deleteIcon')[0].style.display = "block"
+		document.getElementsByTagName('li')[2].classList.add('onActive')
 	}
 
 	if(document.URL.indexOf('http://localhost:9090/stockpage/Turkey') >= 0){
 		let catname = document.querySelector('.catname').textContent = "Turkey"
 		document.getElementsByClassName('deleteIcon')[1].style.display = "block"
+		document.getElementsByTagName('li')[3].classList.add('onActive')
 	}
 
 	if(document.URL.indexOf('http://localhost:9090/stockpage/Fish') >= 0){
 		let catname = document.querySelector('.catname').textContent = "Fish"
 		document.getElementsByClassName('deleteIcon')[2].style.display = "block"
+		document.getElementsByTagName('li')[4].classList.add('onActive')
 	}
 
 	if(document.URL.indexOf('http://localhost:9090/stockpage/Food%20Items') >= 0){
 		let catname = document.querySelector('.catname').textContent = "Food Items"
 		document.getElementsByClassName('deleteIcon')[3].style.display = "block"
+		document.getElementsByTagName('li')[5].classList.add('onActive')
 	}
 
 	if(document.URL.indexOf('http://localhost:9090/stockpage/Test%20Category') >= 0){

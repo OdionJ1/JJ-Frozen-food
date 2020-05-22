@@ -1,4 +1,7 @@
 /* Global Section */
+body{
+    background: radial-gradient(circle, silver, #f37373);
+}
 .index_area{
     margin-left: 150px;
     margin-right: 150px;
@@ -29,23 +32,35 @@ textarea {
 
 .navbar-header-text:hover {
     text-decoration: none;
-    color: rgb(170, 168, 168);
+    color: #2f66cc;
 }
 
-.navbar-right input{
+
+.navbar-right input[type=text]{
     padding: 6px;
     border: none;
+    outline: none;
     margin-top: 8px;
     font-size: 16px;
+    border-bottom: 0.1px solid white;
+    background-color: transparent;
+    width: 300px;
+}
+
+.navbar-right input[type=text]:focus {
+    border: none;
+    border-bottom: 0.1px solid white;
 }
 
 .navbar-right button{
-    padding: 6px 10px;
-    margin-top: 8px;
-    background: rgb(241, 240, 240);
-    font-size: 16px;
+    margin-top: 15px;
+    margin-left: -22px;
+    background: transparent;
     border: none;
-    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    position: absolute;
+    text-align: center;
 }
 /* Header Section end */
 /* Breadcrumb section */
@@ -81,6 +96,7 @@ ul.breadcrumb {
 /* Categories and product section */
 .row {
     display: flex;
+    margin-top: 35px;
 }
 
 /* Category Section */
@@ -134,6 +150,10 @@ ul.breadcrumb {
     text-decoration: underline;
 }
 
+.onActive{
+    background-color: #eee;
+}
+
 #myCategories li .deleteIcon{
     float: right;
     width: 7%;
@@ -182,6 +202,7 @@ ul.breadcrumb {
     padding: 0 10px 15px;
     margin-top: -20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fcf8f8!important;
 }
 
 .right .contact{

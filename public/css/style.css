@@ -8,7 +8,7 @@ textarea {
 }
 
 footer{
-  background-color: #dfdede!important;
+  background: radial-gradient(circle, rgb(243, 173, 173), white)!important;
   color: #2c2c2c;
   padding: 2px 0;
 }
