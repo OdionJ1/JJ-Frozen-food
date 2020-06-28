@@ -48,10 +48,10 @@
                 <div class="form-group" style="margin-top: -10px;">
                   <h5 class="text-center" style="font-weight: bold;">wholesale price </h5>
                   <div class="col-sm-6">
-                    <input name="wpminprice" type="text" class="form-control input-sm" id="wpminprice" placeholder="min" required>
+                    <input name="wpminprice" type="text" class="form-control input-sm" id="wpminprice" placeholder="min">
                   </div>
                   <div class="col-sm-6">
-                    <input name="wpmaxprice" type="text" class="form-control input-sm" id="wpmaxprice" placeholder="max" required>
+                    <input name="wpmaxprice" type="text" class="form-control input-sm" id="wpmaxprice" placeholder="max">
                   </div>
                 </div>
 
@@ -73,6 +73,9 @@
               </section>
           </section>
       </div>
+      <div class="imageAds">
+        <img src="../public/images/rrrry.jpg" alt="">
+      </div>
   </div>
   
   <div class="right" style="background-color:#fff;">
@@ -87,12 +90,12 @@
       <li>
         <img style="align-self: flex-start;" src="../public/upload/{{filename}}" alt="{{name}}" title="{{name}}" width="130px">
         <div class="about-product">
-          <h3 class="productname">{{name}}</h3>
+          <h4 class="productname">{{name}}</h4>
           <p class="description">{{description}}</p>
           <p class="availability">Availability: <span class="inStock">In Stock</p>
         </div>
         <div class="price">
-          <p class= "wp">Wholesale price: <span class="min">&#8358;{{wpminprice}} - </span><span class="max">&#8358;{{wpmaxprice}}</span></p>
+          <p title="per 10kg" class= "wp">Wholesale price: <span class="min">&#8358;{{wpminprice}} - </span><span class="max">&#8358;{{wpmaxprice}}</span></p>
            <p class= "rp">Retail price: <span class="min">&#8358;{{rpminprice}} - </span><span class="max">&#8358;{{rpmaxprice}}</span></p>
            <button data-id="{{_id}}" class="btn-danger btn-delete-stock deleteIcon2"><a href="/"><i class="fa fa-trash" style="color: #ffffff;"></i></a></button>
         </div>

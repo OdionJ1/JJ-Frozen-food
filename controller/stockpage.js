@@ -23,13 +23,54 @@ module.exports = {
 
         StockModel.find({'category_id': req.params.Categoryname}, function(err, result){
             if (err) throw err;
-            console.log('params = ',req.params.Categoryname)
+            // console.log('params = ',req.params.Categoryname)
 
             viewModel.stock = result;
             viewModel.categoryname = req.params.Categoryname
 
             res.render('stockpage', viewModel)
         }).lean();
+    },
+
+    getProduct: function(req, res){
+        let viewModel = {};
+        StockModel.findOne({'description': req.body.product}, function(err, result){
+            if (err) throw err;
+            viewModel.product = req.body.product
+            console.log('You searched for = '+viewModel.product)
+
+            if(result){
+                res.redirect('/search=' + viewModel.product)
+            } else {
+                res.redirect('/');
+            }
+
+        }).lean();
+    },
+
+    searched: function(req, res){
+        let viewModel = {
+            layout: 'stockpagemain',
+            category: [],
+            stock: [],
+        };
+
+        StockModel.find({'description': req.params.product}, function(err, result){
+            if (err) throw err;
+            console.log('Stock = '+ result[0].name)
+            console.log(req.params.product)
+
+            viewModel.stock = result;
+
+            res.render('stockpage', viewModel)
+        }).lean();
+
+        // StockCategoriesModel.find({}, function(err, result){
+        //     if (err) throw err;
+        //     console.log(result);
+        //     viewModel.category = result;
+            
+        // }).lean();
     },
 
     createCategory: async function(req, res){

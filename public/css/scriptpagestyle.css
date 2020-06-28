@@ -71,24 +71,24 @@ ul.breadcrumb {
     margin-bottom: -20px;
     background-color: transparent;
     font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-  ul.breadcrumb li {
+}
+ul.breadcrumb li {
     display: inline;
     font-size: 16px;
-  }
-  ul.breadcrumb li+li:before {
+}
+ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: '>' ;
-  }
-  ul.breadcrumb li a {
+}
+ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
-  }
-  ul.breadcrumb li a:hover {
+}
+ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
-  }
+}
 
 /* Breadcrumb section end */
 
@@ -193,6 +193,10 @@ ul.breadcrumb {
     border: 1px solid #4b7dda;
     margin-left: 16px;
 }
+
+.left .imageAds{
+    margin-left: 15px;
+}
 /* Category Section end */
 
 
@@ -230,7 +234,7 @@ ul.breadcrumb {
 
 .right #stock li .about-product{
     margin-left: 30px;
-    margin-top: -18px; 
+    margin-top: -7px; 
 }
 
 .right #stock li .about-product .description, .right #stock li .about-product .availability{
@@ -246,7 +250,7 @@ ul.breadcrumb {
 .price .deleteIcon2{
   float: right;
   margin-top: 30px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .deleteIcon2 {
@@ -268,7 +272,7 @@ ul.breadcrumb {
 }
 
 #stock .price .min, #stock .price .max{
-    font-size: x-large;
+    font-size: large;
     color: #fa3535;
 }
 
