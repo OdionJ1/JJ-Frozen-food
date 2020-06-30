@@ -34,6 +34,7 @@ module.exports = {
 
     getProduct: function(req, res){
         let viewModel = {};
+
         StockModel.findOne({'description': req.body.product}, function(err, result){
             if (err) throw err;
             viewModel.product = req.body.product
@@ -42,8 +43,18 @@ module.exports = {
             if(result){
                 res.redirect('/search=' + viewModel.product)
             } else {
-                res.redirect('/');
-            }
+                StockModel.findOne({'name': req.body.product}, function(err, result){
+                    if (err) throw err;
+                    viewModel.product = req.body.product
+
+                    if(result){
+                        res.redirect('/search=' + viewModel.product)
+                    } else {
+                        res.redirect('/');
+                    }
+
+                }) 
+            } 
 
         }).lean();
     },
@@ -52,25 +63,31 @@ module.exports = {
         let viewModel = {
             layout: 'stockpagemain',
             category: [],
-            stock: [],
         };
 
         StockModel.find({'description': req.params.product}, function(err, result){
             if (err) throw err;
-            console.log('Stock = '+ result[0].name)
+            console.log('StockByDescription = '+ result)
             console.log(req.params.product)
 
-            viewModel.stock = result;
-
-            res.render('stockpage', viewModel)
+            viewModel.stockByDescription = result;
         }).lean();
 
-        // StockCategoriesModel.find({}, function(err, result){
-        //     if (err) throw err;
-        //     console.log(result);
-        //     viewModel.category = result;
+        StockModel.find({'name': req.params.product}, function(err, result){
+            if (err) throw err;
+            console.log('StockByName = '+ result)
+            console.log(req.params.product)
+
+            viewModel.stockByName = result;
+ 
+        }).lean();
+
+        StockCategoriesModel.find({}, function(err, result){
+            if (err) throw err;
+            viewModel.category = result;
             
-        // }).lean();
+            res.render('searchresult', viewModel)
+        }).lean();
     },
 
     createCategory: async function(req, res){
