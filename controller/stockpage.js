@@ -35,34 +35,76 @@ module.exports = {
     getProduct: function(req, res){
         let viewModel = {};
 
-        StockModel.findOne({'description': req.body.product}, function(err, result){
+        StockModel.find({}, function(err, stock){
             if (err) throw err;
-            viewModel.product = req.body.product
-            console.log('You searched for = '+viewModel.product)
 
-            if(result){
-                res.redirect('/search=' + viewModel.product)
-            } else {
-                StockModel.findOne({'name': req.body.product}, function(err, result){
-                    if (err) throw err;
-                    viewModel.product = req.body.product
+            if (stock){
 
-                    if(result){
-                        res.redirect('/search=' + viewModel.product)
-                    } else {
-                        res.redirect('/');
-                    }
+                //I'm giving a condition for a possible search word here
+                if (req.body.product.toLowerCase() == "egg"){
+                    req.body.product = 'eggs'
+                }
 
-                }) 
-            } 
+                if (req.body.product.toLowerCase()  == "sausages"){
+                    req.body.product = 'sausage'
+                }
 
-        }).lean();
+                if (req.body.product.toLowerCase()  == "croaker fish"){
+                    req.body.product = 'Croaker Fish(20kg)'
+                }
+
+                if (req.body.product.toLowerCase()  == "panla fish"){
+                    req.body.product = 'Panla Fish(10kg)'
+                }
+
+                if (req.body.product.toLowerCase()  == "kote fish"){
+                    req.body.product = 'Kote Fish(20kg)'
+                }
+
+                if (req.body.product.toLowerCase()  == "shawa fish"){
+                    req.body.product = 'Shawa Fish(20kg)'
+                }
+                //
+
+                console.log(req.body.product +' is what you searched for')
+    
+                let searchResult = stock.filter(function(searched){
+
+                    return searched.name.toLowerCase() == req.body.product.toLowerCase()
+                })
+
+                if(searchResult.length == 0){
+                    let searchResult = stock.filter(function(searched){
+
+                    return searched.description.toLowerCase() == req.body.product.toLowerCase()
+                    })
+                    viewModel.product = searchResult
+                } else{
+                    viewModel.product = searchResult
+                }
+
+                if(viewModel.product.length == 0){
+                    viewModel.product = "error: productnotfound"
+
+                    req.flash('searchError', 'Product Not Found');
+                    res.redirect('/search=' + viewModel.product)
+
+                } else {
+                    console.log('You searched for = '+req.body.product)
+                    console.log('You searched for = '+viewModel.product[0].name)
+
+                    res.redirect('/search=' + viewModel.product[0].name)
+                }
+
+            }
+        }).lean()
     },
 
     searched: function(req, res){
         let viewModel = {
             layout: 'stockpagemain',
             category: [],
+            searchError:req.flash('searchError')
         };
 
         StockModel.find({'description': req.params.product}, function(err, result){

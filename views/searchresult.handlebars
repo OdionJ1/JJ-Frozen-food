@@ -82,6 +82,9 @@
     <div>
       <h3 class="catname">Search Result:</h3>
     </div>
+    {{#if searchError}}
+      <div class="alert alert-danger">{{searchError}} <span class="close" data-dismiss="alert">&times;</span></div>
+    {{/if}}
     <h5 class="contact"><span><a href="/#contact3"></i> Contact us</a></span> to get current price or <span><a href="" class="btn-createModal">Get Quote</a></span></h5>
     <hr class="section-line2">
     <ul id="stock">

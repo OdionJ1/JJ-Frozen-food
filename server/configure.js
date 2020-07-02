@@ -3,8 +3,9 @@ let express = require('express');
 let path = require('path');
 let exphbs = require('express-handlebars');
 let moment = require('moment');
-// let session = require('express-session');
+let session = require('express-session');
 let morgan = require('morgan');
+let flash = require('express-flash');
 let favicon = require('serve-favicon');
 let multer = require('multer');
 let bodyParser = require('body-parser');
@@ -17,11 +18,12 @@ module.exports = function (app) {
     app.use(bodyParser.json());
     app.use(methodOverride('_method'));
     app.use(multer({dest: "./public/upload/temp"}).single('file'));
-    // app.use(session({
-    //     secret:'jwjevbv',
-    //     resave: 'false',
-    //     saveUninitialized: 'false'
-    // }));
+    app.use(session({
+        secret:'jwjevbv',
+        resave: 'false',
+        saveUninitialized: 'false'
+    }));
+    app.use(flash());
     app.use('/public/', express.static(path.join(__dirname, '../public')));
     routes(app);
 
