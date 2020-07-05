@@ -383,6 +383,46 @@ h4 span i{
 }
 /* Contact us Section end */
 
+/* Admin login Modal Section */
+#loginModal{
+  padding-right: 1000px;
+  margin-left: 100px;
+
+}
+.modal-header{
+  background: radial-gradient(circle, rgb(243, 173, 173), white);
+}
+
+.modal-body .avatar{
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+  margin-top: -10px;
+}
+
+.modal-body .avatar-img{
+  width: 40%;
+  border-radius: 50%;
+}
+
+.login-modal-content{
+  width: 74%;
+  padding-left: 0;
+}
+
+.login-modal-form{
+  margin-left: 60px;
+}
+
+
+
+
+/* Admin login Modal Section end*/
+
+
+
+
+
 /* media Queries Section */
 @media screen and (max-width: 1200px){
   .frozen-fish{

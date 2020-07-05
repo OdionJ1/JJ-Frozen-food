@@ -1,6 +1,6 @@
 /* Global Section */
 body{
-    background: radial-gradient(circle, silver, #f37373);
+    background: radial-gradient(circle, #ffffff, #f10707);
 }
 .index_area{
     margin-left: 150px;
@@ -63,6 +63,7 @@ textarea {
     text-align: center;
 }
 /* Header Section end */
+
 /* Breadcrumb section */
 
 ul.breadcrumb {

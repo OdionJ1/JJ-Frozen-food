@@ -15,10 +15,17 @@ $(document).ready(function(){
 		document.querySelector("p.opening-time").textContent = "Open today until 10pm"
 	} else {document.querySelector("p.opening-time").textContent = "Closed"}
 
+
 	$('.btn-createReviewModal').click(function(event){
 		event.preventDefault();
 
 		$('#reviewModal').modal('show');
+	});
+
+	$('.btn-createLoginModal').click(function(event){
+		event.preventDefault();
+
+		$('#loginModal').modal('show');
 	});
 
 	$('.btn-create').click(function(event){
